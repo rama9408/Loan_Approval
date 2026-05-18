@@ -9,61 +9,7 @@ from sklearn.metrics import accuracy_score
 # 1. Page Configuration
 st.set_page_config(page_title="Loan Predictor Dashboard", layout="centered")
 
-# 2. Inject Theme 2 Custom Dark Gradient CSS
-st.markdown(
-    """
-    <style>
-    /* Gradient Background for the Entire App */
-    .stApp {
-        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-    }
-    
-    /* Force text colors to bright white/light gray for readability */
-    h1, h2, h3, p, span, label, .stMarkdown {
-        color: #ffffff !important;
-    }
-    
-    /* Style the Sidebar container */
-    section[data-testid="stSidebar"] {
-        background-color: rgba(15, 32, 67, 0.85) !important;
-        border-right: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    /* Make input form boxes translucent with bright text */
-    div[data-baseweb="input"] {
-        background-color: rgba(255, 255, 255, 0.1) !important;
-        border: 1px solid rgba(255, 255, 255, 0.2) !important;
-        border-radius: 6px;
-    }
-    div[data-baseweb="input"] input {
-        color: #ffffff !important;
-    }
-    
-    /* Metric Card styling in Sidebar */
-    div[data-testid="stMetricValue"] {
-        color: #00ffcc !important; /* Neon accent for the 100% accuracy score */
-        font-weight: bold;
-    }
-    
-    /* Custom button styling */
-    div.stButton > button:first-child {
-        background-color: #ffffff !important;
-        color: #1e3c72 !important;
-        font-weight: bold;
-        border-radius: 6px;
-        border: none;
-        width: 100%;
-        transition: all 0.3s ease;
-    }
-    div.stButton > button:first-child:hover {
-        background-color: #00ffcc !important;
-        color: #1e3c72 !important;
-        box-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+
 
 # 3. Model Pipeline Runtime (Cached for performance)
 @st.cache_resource
